@@ -35,7 +35,7 @@ class DBMaker extends DB implements CarsInterface
 
     public function get(int $id): array
     {
-        $query = "SELECT * FROM manufacturers WHERE id = $id";
+        $query = "SELECT * FROM manufacturers WHERE id = $id"; //manufacturers = makers csak nem működött az mysqly-ben és újjat kellett létrehozni
 
         return $this->mysqli->query($query)->fetch_assoc();
     }
@@ -85,7 +85,7 @@ class DBMaker extends DB implements CarsInterface
 
     public function getByFirstCh($ch)
     {
-        $query = "SELECT * FROM manufacturers WHERE name LIKE '$ch%' ORDER BY name";
+        $query = "SELECT * FROM manufacturers WHERE name LIKE '$ch%' ORDER BY name"; 
 
         return $this->mysqli->query($query)->fetch_all(MYSQLI_ASSOC);
     }
